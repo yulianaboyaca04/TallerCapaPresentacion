@@ -1,0 +1,89 @@
+
+<div class="panel panel-primary" ng-hide="panelEditar">
+    <div class="panel-heading">Parametrizaci&oacute;n de Matricula</div>
+    <div class="panel-body">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-click="nuevo()">Nueva Matricula</button>
+        </div>
+        <table class="resultados table table-striped">
+            <tr>
+                <th>
+                    año
+                </th>
+                <th>
+                    semestre
+                </th>
+                <th>
+                    estudiante
+                </th>
+                <th>
+                    materias
+                </th>
+            </tr>
+            <tr ng-repeat="row in lista">
+                <td>{{row.anio}}</td>
+                <td>{{row.semestre}}</td>
+                <td>{{row.estudiante.apellidos + " "+ row.estudiante.nombre }}</td>
+                <td>{{row.materias.nombre}}</td> <!-- se indica solo el nombre del objeto materia -->
+                <td class="row">
+                    <button type="button" class="btn btn-default" ng-click="editar(row)">
+                        <span class="glyphicon glyphicon-pencil"></span>Editar
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="eliminar(row)">
+                        <span class="glyphicon glyphicon-remove"></span>Eliminar
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br/>
+    </div>
+</div>
+
+<div class="panel panel-primary" ng-show="panelEditar">
+    <div class="panel-heading">Parametrizaci&oacute;n de Materia</div>
+    <div class="panel-body">
+
+        <div class="form-group col-md-6 col-center" ng-class="errores.nombre ? 'error' : ''">
+            <label for="año">año</label>
+            <input id="anio" 
+                   class="form-control" 
+                   type="text"
+                   ng-model="datosFormulario.anio"
+                   placeholder="año"/>
+            <div ng-show="errores.nombre">{{errores.nombre}}</div>
+            <div ng-class="errores.semestre ? 'error' : ''">
+                <label for="smestre">semestre</label>
+                <input id="semestre" 
+                       class="form-control" 
+                       type="text"
+                       ng-model="datosFormulario.semestre"
+                       placeholder="semestre"/>
+            </div>
+            <div ng-class="errores.estudiante ? 'error' : ''">
+                <label>Estudiante</label>
+                <select id="facultad" class="form-control" 
+                        ng-model="datosFormulario.estudinte"
+                        ng-options="option.apellidos + ' ' + option.nombre for option in listaEstudiantes track by option.id"
+                        placeholder="semestre">
+                </select>
+                <div ng-show="errores.estudiante">{{errores.materia}}</div>
+            </div>
+            <div ng-class="errores.materia ? 'error' : ''">
+                <label>Materias</label>
+                <select id="facultad" class="form-control" 
+                        ng-model="datosFormulario.materias"
+                        ng-options="option.nombre for option in listaMaterias track by option.id"
+                        placeholder="semestre">
+                </select>
+                <div ng-show="errores.materia">{{errores.materia}}</div>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-sm-offset-5 col-sm-2 text-center">
+                <button type="button" class="btn btn-default btn-primary" ng-click="guardar()">Aceptar</button>
+                <button type="button" class="btn btn-default btn-warning" ng-click="cancelar()">Cancelar</button>
+            </div>  
+        </div> 
+    </div>
+</div>
+

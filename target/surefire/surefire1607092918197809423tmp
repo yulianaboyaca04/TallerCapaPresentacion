@@ -1,0 +1,9 @@
+#surefire
+#Mon Sep 03 19:46:05 COT 2018
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Yuliana Boyaca\\Documents\\UNIVERSIDAD\\8_SEMESTRE\\SOFTWARE_II\\Projects\\Taller2
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Yuliana Boyaca\\.m2\\repository
+netbeans.deploy=true
+netbeans.deploy.clientUrlPart=/index.html
+basedir=C\:\\Users\\Yuliana Boyaca\\Documents\\UNIVERSIDAD\\8_SEMESTRE\\SOFTWARE_II\\Projects\\Taller2
