@@ -44,37 +44,39 @@
     <div class="panel-heading">Parametrizaci&oacute;n de Estudiante</div>
     <div class="panel-body">
 
-        <div class="form-group col-md-6" ng-class="errores.nombre ? 'error' : ''">
+        <div class="form-group col-md-6 col-center" ng-class="errores.nombre ? 'error' : ''">
             <label for="nombre">Nombre</label>
-                <input id="nombre" 
-                       class="form-control" 
-                       type="text"
-                       ng-model="datosFormulario.nombre"
-                       placeholder="nombre"/>
-                <div ng-show="errores.nombre">{{errores.nombre}}</div>
+            <input id="nombre" 
+                   class="form-control" 
+                   type="text"
+                   ng-model="datosFormulario.nombre"
+                   placeholder="nombre"/>
+            <div ng-show="errores.nombre">{{errores.nombre}}</div>
             <label for="apellidos">Apellidos</label>
-                <input id="apellidos" 
-                       class="form-control" 
-                       type="text"
-                       ng-model="datosFormulario.apellidos"
-                       placeholder="apellidos"/>
+            <input id="apellidos" 
+                   class="form-control" 
+                   type="text"
+                   ng-model="datosFormulario.apellidos"
+                   placeholder="apellidos"/>
             <label for="codigo">Codigo</label>
-                <input id="codigo" 
-                       class="form-control" 
-                       type="text"
-                       ng-model="datosFormulario.codigo"
-                       placeholder="codigo"/>
-             <label for="documento">Documento</label>
-                  <input id="documento" 
-                       class="form-control" 
-                       type="text"
-                       ng-model="datosFormulario.documento"
-                       placeholder="documento"/>
+            <input id="codigo" 
+                   class="form-control" 
+                   type="text"
+                   ng-model="datosFormulario.codigo"
+                   placeholder="codigo"/>
+            <label for="documento">Documento</label>
+            <input id="documento" 
+                   class="form-control" 
+                   type="text"
+                   ng-model="datosFormulario.documento"
+                   placeholder="documento"/>
         </div> 
-        <div class="btn-group">
-            <button type="button" class="btn btn-default" ng-click="guardar()">Aceptar</button>
-            <button type="button" class="btn btn-default" ng-click="cancelar()">Cancelar</button>
-        </div>    
+        <div class="row">
+            <div class="col-sm-offset-5 col-sm-2 text-center">
+                <button type="button" class="btn btn-default btn-primary" ng-click="guardar()">Aceptar</button>
+                <button type="button" class="btn btn-default btn-primary" ng-click="cancelar()">Cancelar</button>
+            </div>
+        </div>
     </div>
 </div>
 

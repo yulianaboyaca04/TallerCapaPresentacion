@@ -13,7 +13,7 @@ module.controller('CarreraCtrl', ['$scope', '$filter', '$http', function ($scope
     //guardar
     $scope.nuevo = function () {
         $scope.panelEditar = true;
-        $scope.datosFormulario = {nombre, apellidos};
+        $scope.datosFormulario = {};
     };
     
     $scope.guardar = function () {

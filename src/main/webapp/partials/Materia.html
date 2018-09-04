@@ -35,7 +35,7 @@
     <div class="panel-heading">Parametrizaci&oacute;n de Materia</div>
     <div class="panel-body">
 
-        <div class="form-group col-md-6" ng-class="errores.nombre ? 'error' : ''">
+        <div class="form-group col-md-6 col-center" ng-class="errores.nombre ? 'error' : ''">
             <label for="nombre">nombre</label>
             <input id="nombre" 
                    class="form-control" 
@@ -50,10 +50,12 @@
                    ng-model="datosFormulario.creditos"
                    placeholder="creditos"/>
         </div> 
-        <div class="btn-group">
-            <button type="button" class="btn btn-default" ng-click="guardar()">Aceptar</button>
-            <button type="button" class="btn btn-default" ng-click="cancelar()">Cancelar</button>
-        </div>    
+        <div class="row">
+            <div class="col-sm-offset-5 col-sm-2 text-center">
+                <button type="button" class="btn btn-default btn-primary" ng-click="guardar()">Aceptar</button>
+                <button type="button" class="btn btn-default btn-primary" ng-click="cancelar()">Cancelar</button>
+            </div> 
+        </div>
     </div>
 </div>
 

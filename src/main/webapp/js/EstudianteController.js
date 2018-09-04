@@ -6,9 +6,9 @@
 
 'use strict';
 
-    var listaEstudiantes=[{id:1,nombre:'Jose',apellidos:'Velasco',codigo:'12552',documento:'1552'},
-                         {id:2,nombre:'Jorge',apellidos:'Cato',codigo:'151252',documento:'5455'},
-                         {id:3,nombre:'Yuliana',apellidos:'Boyaca', codigo:'12552',documento:'4557'}];
+    var listaEstudiantes=[{id:1,nombre:'Jose',apellidos:'Velasco Ortiz',codigo:'12552',documento:'1552'},
+                         {id:2,nombre:'Jorge',apellidos:'Catolico Ramirez',codigo:'151252',documento:'5455'},
+                         {id:3,nombre:'Yuliana',apellidos:'Boyaca Aguilar', codigo:'12552',documento:'4557'}];
 
 module.controller('EstudianteCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
     //listar
