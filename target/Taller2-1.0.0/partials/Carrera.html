@@ -52,6 +52,7 @@
                 <select id="facultad" class="form-control" 
                         ng-model="datosFormulario.facultad"
                         ng-options="option.nombre for option in listaFacultad track by option.id">
+                    <option value="">Seleccione facultad</option>
                 </select>
                 <div ng-show="errores.facultad">{{errores.facultad}}</div>
             </div>
@@ -59,7 +60,7 @@
         <div class="row">
             <div class="col-sm-offset-5 col-sm-2 text-center">
                 <button type="button" class="btn btn-default btn-primary" ng-click="guardar()">Aceptar</button>
-                <button type="button" class="btn btn-default btn-warning" ng-click="cancelar()">Cancelar</button>
+                <button type="button" class="btn btn-default btn-danger" ng-click="cancelar()">Cancelar</button>
             </div>  
         </div>
     </div>

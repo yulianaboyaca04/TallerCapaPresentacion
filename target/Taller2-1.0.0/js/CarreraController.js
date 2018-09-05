@@ -1,6 +1,8 @@
+/* global listaFacultades */
+
 'use strict';
 
-var listaCarreras=[{nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}]
+var listaCarreras=[{id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}]
 
 module.controller('CarreraCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
     //listar

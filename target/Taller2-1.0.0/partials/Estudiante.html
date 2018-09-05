@@ -20,12 +20,24 @@
                 <th>
                     Documento
                 </th>
+                <th>
+                    Fecha de Nacimiento
+                </th>
+                <th>
+                    Lugar de Nacimiento
+                </th>
+                <th>
+                    Carrera
+                </th>
             </tr>
             <tr ng-repeat="row in lista">
                 <td>{{row.nombre}}</td>
                 <td>{{row.apellidos}}</td>
                 <td>{{row.codigo}}</td>
                 <td>{{row.documento}}</td>
+                <td>{{row.fechaNacimiento|date: "yyyy-MM-dd"}}</td>
+                <td>{{row.municipio.nombre}}</td>
+                <td>{{row.carrera.nombre}}</td>
                 <td class="row">
                     <button type="button" class="btn btn-default" ng-click="editar(row)">
                         <span class="glyphicon glyphicon-pencil"></span>Editar
@@ -70,11 +82,33 @@
                    type="text"
                    ng-model="datosFormulario.documento"
                    placeholder="documento"/>
+            <label>Fecha Nacimiento</label>
+            <input type="date"                           
+                   value="{{ datosFormulario.fechaNacimiento | date: 'yyyy-MM-dd'}}"
+                   class="form-control"
+                   ng-model="datosFormulario.fechaNacimiento"/>
+            <div ng-show="errores.fechaNacimiento">{{errores.fechaNacimiento}}</div>
+            <label>Lugar de nacimiento </label>
+            <select id="municipio" class="form-control" 
+                    ng-model="datosFormulario.municpio"
+                    ng-options="option.nombre for option in listaMunicipio track by option.id">
+                <option value="">Seleccione lugar de nacimiento</option>
+            </select>
+            <div ng-show="errores.municipio">{{errores.municipio}}</div>
+            <div ng-class="errores.carrera ? 'error' : ''">
+                <label>Carrera</label>
+                <select id="carrera" class="form-control" 
+                        ng-model="datosFormulario.carrera"
+                        ng-options="option.nombre for option in listaCarrera track by option.id">
+                    <option value="">Seleccione carrera</option>
+                </select>
+                <div ng-show="errores.carrera">{{errores.carrera}}</div>
+            </div>
         </div> 
         <div class="row">
             <div class="col-sm-offset-5 col-sm-2 text-center">
                 <button type="button" class="btn btn-default btn-primary" ng-click="guardar()">Aceptar</button>
-                <button type="button" class="btn btn-default btn-warning" ng-click="cancelar()">Cancelar</button>
+                <button type="button" class="btn btn-default btn-danger" ng-click="cancelar()">Cancelar</button>
             </div>
         </div>
     </div>

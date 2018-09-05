@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 
+/* global listaMunicipios, listaCarreras */
+
 'use strict';
 
-    var listaEstudiantes=[{id:1,nombre:'Jose',apellidos:'Velasco Ortiz',codigo:'12552',documento:'1552'},
-                         {id:2,nombre:'Jorge',apellidos:'Catolico Ramirez',codigo:'151252',documento:'5455'},
-                         {id:3,nombre:'Yuliana',apellidos:'Boyaca Aguilar', codigo:'12552',documento:'4557'}];
+    var listaEstudiantes=[{id:1,nombre:'Jose',apellidos:'Velasco Ortiz',codigo:'12552',documento:'1552', fechaNacimiento:"1996-08-31", municipio:{id:1,nombre:'Tunja'}, carrera:{id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}},
+                         {id:2,nombre:'Jorge',apellidos:'Catolico Ramirez',codigo:'151252',documento:'5455', fechaNacimiento:"1996-08-31", municipio:{id:1,nombre:'Tunja'}, carrera:{id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}},
+                         {id:3,nombre:'Yuliana',apellidos:'Boyaca Aguilar', codigo:'12552',documento:'4557', fechaNacimiento:"1996-08-31", municipio:{id:1,nombre:'Tunja'}, carrera:{id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}}];
 
 module.controller('EstudianteCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
     //listar
@@ -18,6 +20,8 @@ module.controller('EstudianteCtrl', ['$scope', '$filter', '$http', function ($sc
     $scope.datosFormulario = {};
     $scope.panelEditar = false;
     
+    $scope.listaMunicipio = listaMunicipios;
+    $scope.listaCarrera = listaCarreras;
     //guardar
     $scope.nuevo = function () {
         $scope.panelEditar = true;
