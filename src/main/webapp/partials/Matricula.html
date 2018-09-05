@@ -40,7 +40,7 @@
 </div>
 
 <div class="panel panel-primary" ng-show="panelEditar">
-    <div class="panel-heading">Parametrizaci&oacute;n de Materia</div>
+    <div class="panel-heading">Parametrizaci&oacute;n de Matricula</div>
     <div class="panel-body">
 
         <div class="form-group col-md-6 col-center" ng-class="errores.nombre ? 'error' : ''">
@@ -62,7 +62,7 @@
             <div ng-class="errores.estudiante ? 'error' : ''">
                 <label>Estudiante</label>
                 <select id="facultad" class="form-control" 
-                        ng-model="datosFormulario.estudinte"
+                        ng-model="datosFormulario.estudiante"
                         ng-options="option.apellidos + ' ' + option.nombre for option in listaEstudiantes track by option.id"
                         placeholder="semestre">
                 </select>

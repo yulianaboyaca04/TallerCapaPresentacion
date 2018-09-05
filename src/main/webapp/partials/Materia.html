@@ -13,10 +13,22 @@
                 <th>
                     creditos
                 </th>
+                <th>
+                    profesor
+                </th>
+                <th>
+                    carrera
+                </th>
+                <th>
+                    horario
+                </th>
             </tr>
             <tr ng-repeat="row in lista">
                 <td>{{row.nombre}}</td>
                 <td>{{row.creditos}}</td>
+                <td>{{row.profesor.nombre}}</td>
+                <td>{{row.carrera.nombre}}</td>
+                <td>{{row.horario.diaSemana}}</td> <!-- } + {row.horaInicio| date: "hh:mm a"} + {row.horaFin| date: "hh:mm a" -->
                 <td class="row">
                     <button type="button" class="btn btn-default" ng-click="editar(row)">
                         <span class="glyphicon glyphicon-pencil"></span>Editar
@@ -49,6 +61,33 @@
                    type="text"
                    ng-model="datosFormulario.creditos"
                    placeholder="creditos"/>
+            <div ng-class="errores.profesor ? 'error' : ''">
+                <label>Profesor</label>
+                <select id="facultad" class="form-control" 
+                        ng-model="datosFormulario.profesor"
+                        ng-options="option.apellidos + ' ' + option.nombre for option in listaProfesor track by option.id">
+                        <option value="">Seleccione profesor</option>
+                </select>
+                <div ng-show="errores.profesor">{{errores.profesor}}</div>
+            </div>
+            <div ng-class="errores.carrera ? 'error' : ''">
+                <label>Carrera</label>
+                <select id="carrera" class="form-control" 
+                        ng-model="datosFormulario.carrera"
+                        ng-options="option.nombre for option in listaCarrera track by option.id">
+                        <option value="">Seleccione carrera</option>
+                </select>
+                <div ng-show="errores.carrera">{{errores.carrera}}</div>
+            </div>
+            <div ng-class="errores.profesor ? 'error' : ''">
+                <label>Horario</label>
+                <select id="horario" class="form-control" 
+                        ng-model="datosFormulario.diaSemana"
+                        ng-options="option.diaSemana + ': ' + option.horaInicio for option in listaHorarios track by option.id">
+                        <option value="">Seleccione horario</option>
+                </select>
+                <div ng-show="errores.horario">{{errores.horario}}</div>
+            </div>
         </div> 
         <div class="row">
             <div class="col-sm-offset-5 col-sm-2 text-center">

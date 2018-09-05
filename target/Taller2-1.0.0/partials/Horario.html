@@ -18,7 +18,7 @@
                 </th>
             </tr>
             <tr ng-repeat="row in lista">
-                <td>{{row.dia}}</td>
+                <td>{{row.diaSemana}}</td>
                 <td>{{row.horaInicio| date: "hh:mm a"}}</td>
                 <td>{{row.horaFin| date: "hh:mm a"}} </td>
                 <td class="row">
@@ -40,11 +40,10 @@
     <div class="panel-body">
 
         <div class="form-group col-md-6 col-center" ng-class="errores.nombre ? 'error' : ''">
-            <label for="dia">dia</label>
-            <select id="dia" 
+            <label for="diaSemana">dia</label>
+            <select id="diaSemana" 
                     class="form-control" 
-                    ng-model="datosFormulario.dia"
-                    placeholder="dia">
+                    ng-model="datosFormulario.diaSemana">
                 <option value=""> Seleccione el dia </option>
                 <option>Lunes</option>
                 <option>Martes</option>

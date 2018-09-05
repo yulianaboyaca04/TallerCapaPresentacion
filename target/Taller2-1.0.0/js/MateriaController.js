@@ -1,6 +1,13 @@
+/* global listaProfesores, listaHorario, listaCarreras */
+
 'use strict';
 
-var listaMaterias=[{id:1,nombre:'Software II', creditos: '3'}, {id:2,nombre:'Bases de datos', creditos: '3'},{id:3,nombre:'musica', creditos: '4'}];
+var listaMaterias=[{id:1,nombre:'Software II', creditos: '3', profesor:{id:1,nombre:'Jose', apellidos:'Velasco', documento:'1552'}, 
+        carrera: {id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}, horario: {id:1,diaSemana:'Lunes', horaInicio:Date.now(), horaFin:(Date.now())}},
+    {id:2,nombre:'Bases de datos', creditos: '3', profesor:{id:1,nombre:'Jose', apellidos:'Velasco', documento:'1552'}, 
+        carrera: {id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}, horario: {id:1,diaSemana:'Lunes', horaInicio:Date.now(), horaFin:(Date.now())}},
+    {id:3,nombre:'musica', creditos: '4', profesor:{id:1,nombre:'Jose', apellidos:'Velasco', documento:'1552'}, 
+        carrera: {id:1, nombre:'Ingenieria de sistemas', facultad:{id:1,nombre:'ingenieria'}}, horario: {id:1,diaSemana:'Lunes', horaInicio:Date.now(), horaFin:(Date.now())}}];
 
 module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
     //listar
@@ -10,6 +17,9 @@ module.controller('MateriaCtrl', ['$scope', '$filter', '$http', function ($scope
     $scope.datosFormulario = {};
     $scope.panelEditar = false;
     
+    $scope.listaProfesor = listaProfesores;
+    $scope.listaHorarios = listaHorario;
+    $scope.listaCarrera = listaCarreras;
     //guardar
     $scope.nuevo = function () {
         $scope.panelEditar = true;
