@@ -28,7 +28,9 @@
                 <td>{{row.creditos}}</td>
                 <td>{{row.profesor.nombre}}</td>
                 <td>{{row.carrera.nombre}}</td>
-                <td>{{row.horario.diaSemana + ': '}} {{+row.horario.horaInicio | date:'HH:mm'+ ' - '}} {{ row.horario.horaFin | date:'HH:mm'}}</td> <!-- } + {row.horaInicio| date: "hh:mm a"} + {row.horaFin| date: "hh:mm a" -->
+                <td>{{row.horario.diaSemana + ': '}} 
+                    {{row.horario.horaInicio | date:'hh:mm a'+ ' - '}} 
+                    {{row.horario.horaFin | date:'hh:mm a'}}</td> <!-- } + {row.horaInicio| date: "hh:mm a"} + {row.horaFin| date: "hh:mm a" -->
                 <td class="row">
                     <button type="button" class="btn btn-default" ng-click="editar(row)">
                         <span class="glyphicon glyphicon-pencil"></span>Editar
@@ -83,7 +85,7 @@
                 <label>Horario</label>
                 <select id="horario" class="form-control" 
                         ng-model="datosFormulario.diaSemana"
-                        ng-options="option.diaSemana + ': ' + option.horaInicio + ' - '+ option.horaFin   for option in listaHorarios track by option.id">
+                        ng-options="option.diaSemana + ': ' + option.horaInicio + '-' + option.horaFin  for option in listaHorarios track by option.id">
                         <option value="">Seleccione horario</option>
                 </select>
                 <div ng-show="errores.horario">{{errores.horario}}</div>

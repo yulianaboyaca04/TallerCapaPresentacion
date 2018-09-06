@@ -65,6 +65,7 @@
                         ng-model="datosFormulario.estudiante"
                         ng-options="option.apellidos + ' ' + option.nombre for option in listaEstudiantes track by option.id"
                         placeholder="semestre">
+                     <option value="">Seleccione estudiante</option>
                 </select>
                 <div ng-show="errores.estudiante">{{errores.materia}}</div>
             </div>
@@ -74,6 +75,7 @@
                         ng-model="datosFormulario.materias"
                         ng-options="option.nombre for option in listaMaterias track by option.id"
                         placeholder="semestre">
+                     <option value="">Seleccione materias</option>
                 </select>
                 <div ng-show="errores.materia">{{errores.materia}}</div>
             </div>

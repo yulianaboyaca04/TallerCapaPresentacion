@@ -1,8 +1,8 @@
 'use strict';
 
-var listaHorario=[{id:1,diaSemana:'Lunes', horaInicio:Date.now(), horaFin:(Date.now())},
-                   {id:2,diaSemana:'Martes', horaInicio: Date.now(), horaFin: Date.now()},
-                   {id:3,diaSemana:'Miercoles', horaInicio:Date.now(), horaFin: Date.now()}];
+var listaHorario=[{id:1,diaSemana:'Lunes', horaInicio:'08:00 PM', horaFin:'09:00 PM'},
+                   {id:2,diaSemana:'Martes', horaInicio: '10:00 AM', horaFin: '12:00 PM'},
+                   {id:3,diaSemana:'Miercoles', horaInicio:'02:00 PM', horaFin: '04:00 PM'}];
 
 module.controller('HorarioCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
     //listar
