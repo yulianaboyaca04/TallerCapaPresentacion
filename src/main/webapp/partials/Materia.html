@@ -83,7 +83,7 @@
                 <label>Horario</label>
                 <select id="horario" class="form-control" 
                         ng-model="datosFormulario.diaSemana"
-                        ng-options="option.diaSemana + ': ' + option.horaInicio | date:'HH:mm'  for option in listaHorarios track by option.id">
+                        ng-options="option.diaSemana + ': ' + option.horaInicio + ' - '+ option.horaFin   for option in listaHorarios track by option.id">
                         <option value="">Seleccione horario</option>
                 </select>
                 <div ng-show="errores.horario">{{errores.horario}}</div>
